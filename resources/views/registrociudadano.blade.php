@@ -78,11 +78,11 @@
  <div class="row">
   <div class="col-sm-4" align="right" style="font-size: 15pt"><label class="freebirdFormviewerViewItemsItemItemTitle" for="formGroupExampleInput">&nbsp;&nbsp;&nbsp;SUPERCADE:</label></div>
   <div class="col-sm-8" style="font-size: 12pt"> 
-    <label class="radio-inline"><input type="radio" class="option-input checkbox" name="cades">Américas</label>
-    <label class="radio-inline"><input type="radio" class="option-input checkbox" name="cades">Bosa</label>
-    <label class="radio-inline"><input type="radio" class="option-input checkbox" name="cades">20 de Julio</label>
-    <label class="radio-inline"><input type="radio" class="option-input checkbox" name="cades">Suba</label>
-    <label class="radio-inline"><input type="radio" class="option-input checkbox" name="cades">CAD</label>  
+    <label class="radio-inline"><input type="radio" class="option-input checkbox" name="cades" id="cades">Américas</label>
+    <label class="radio-inline"><input type="radio" class="option-input checkbox" name="cades" id="cades">Bosa</label>
+    <label class="radio-inline"><input type="radio" class="option-input checkbox" name="cades" id="cades">20 de Julio</label>
+    <label class="radio-inline"><input type="radio" class="option-input checkbox" name="cades" id="cades">Suba</label>
+    <label class="radio-inline"><input type="radio" class="option-input checkbox" name="cades" id="cades">CAD</label>  
 </div>
 </div> 
 <br>
