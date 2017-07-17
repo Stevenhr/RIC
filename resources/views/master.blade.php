@@ -59,7 +59,10 @@
                 <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="themes">Administración <span class="caret"></span></a>
                 <ul class="dropdown-menu" aria-labelledby="themes">
             
-                  <li><a href="#">Asignar Actividades</a></li>
+                  <li class=”{{ Request::is( 'registrarUsuario') ? 'active' : '' }}”>
+                    <a href="{{ URL::to( 'registrarUsuario') }}">Registro de Usuario</a>
+                  </li>
+
                 </ul>
               </li>
 
@@ -67,7 +70,9 @@
                 <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="download">Información<span class="caret"></span></a>
                 <ul class="dropdown-menu" aria-labelledby="download">
                  
-                  <li class=”{{ Request::is( 'registrarciudadano') ? 'active' : '' }}”><a href="{{ URL::to( 'registrarciudadano') }}">Registro de Información</a></li>
+                  <li class=”{{ Request::is( 'registrarciudadano') ? 'active' : '' }}”>
+                    <a href="{{ URL::to( 'registrarciudadano') }}">Registro de Información</a>
+                  </li>
                   
                 </ul>
               </li>
@@ -82,12 +87,7 @@
               </li>
             </ul>
 
-            <form class="navbar-form navbar-left" role="search">
-                <div class="form-group">
-                  <input type="text" class="form-control" placeholder="Buscar">
-                </div>                
-                <button type="submit" class="btn btn-default">Ir</button>
-            </form>
+           
 
             <ul class="nav navbar-nav navbar-right">
               <li><a href="http://www.idrd.gov.co/sitio/idrd/" target="_blank">I.D.R.D</a></li>

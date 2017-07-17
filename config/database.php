@@ -49,9 +49,9 @@ return [
             'driver' => 'mysql',
             'host' => env('DB_HOST'),
             'port' => env('DB_PORT'),
-            'database' => env('DB_DATABASE'),
-            'username' => env('DB_USERNAME'),
-            'password' => env('DB_PASSWORD'),
+            'database' => env('DB_DATABASE_'),
+            'username' => env('DB_USERNAME_'),
+            'password' => env('DB_PASSWORD_'),
             'charset' => 'utf8',
             'collation' => 'utf8_unicode_ci',
             'prefix' => '',
@@ -71,6 +71,20 @@ return [
             'prefix' => '',
             'strict' => false,
             'engine' => 'InnoDB',
+        ],
+        
+        'db_parques' => [
+            'driver' => 'mysql',
+            'host' => env('DB_HOST', 'db_parques'),
+            'port' => env('DB_PORT', '3306'),
+            'database' => env('DB_PARQUES', 'database'),
+            'username' => env('DB_USERNAME', 'user'),
+            'password' => env('DB_PASSWORD', 'pass'),
+            'charset' => 'utf8',
+            'collation' => 'utf8_unicode_ci',
+            'prefix' => '',
+            'strict' => false,
+            'engine' => null,
         ]
     ],
 

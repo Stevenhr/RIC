@@ -26,4 +26,3 @@ Route::any('/logout', 'MainController@logout');
 Route::group(['middleware' => ['web']], function () {
 	Route::get('/welcome', 'MainController@welcome');
 });
-/*
