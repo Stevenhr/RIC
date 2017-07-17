@@ -37,7 +37,7 @@
           <script src="{{ asset('public/Js/main.js') }}"></script>
       @show
 
-      <title>Nombre Módulo</title>
+      <title>Aplicativo Registro Información - Supercades</title>
   </head>
 
   <body>
@@ -56,28 +56,28 @@
           <div class="navbar-collapse collapse" id="navbar-main">
             <ul class="nav navbar-nav">
               <li class="dropdown">
-                <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="themes">Opción 1 <span class="caret"></span></a>
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="themes">Administración <span class="caret"></span></a>
                 <ul class="dropdown-menu" aria-labelledby="themes">
-                  <li><a href="#">Default</a></li>
-                  <li class="divider"></li>
-                  <li><a href="#">Sub-Item 1</a></li>
-                  <li><a href="#">Sub-Item 2</a></li>
-                  <li><a href="#">Sub-Item 3</a></li>
-                  <li><a href="#">Sub-Item 4</a></li>
+            
+                  <li><a href="#">Asignar Actividades</a></li>
                 </ul>
               </li>
-              <li>
-                <a href="#">Opción 2</a>
-              </li>
+
               <li class="dropdown">
-                <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="download">Opción 3 <span class="caret"></span></a>
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="download">Información<span class="caret"></span></a>
                 <ul class="dropdown-menu" aria-labelledby="download">
-                  <li><a href="#">Default</a></li>
-                  <li class="divider"></li>
-                  <li><a href="#">Sub-Item 1</a></li>
-                  <li><a href="#">Sub-Item 2</a></li>
-                  <li><a href="#">Sub-Item 3</a></li>
-                  <li><a href="#">Sub-Item 4</a></li>
+                 
+                  <li class=”{{ Request::is( 'registrarciudadano') ? 'active' : '' }}”><a href="{{ URL::to( 'registrarciudadano') }}">Registro de Información</a></li>
+                  
+                </ul>
+              </li>
+
+              <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="download">Reportes<span class="caret"></span></a>
+                <ul class="dropdown-menu" aria-labelledby="download">
+                  <li><a href="#">Reporte General</a></li>
+                  <li><a href="#">Reportes por Super Cades</a></li>
+
                 </ul>
               </li>
             </ul>
@@ -105,8 +105,8 @@
           <div class="page-header" id="banner">
             <div class="row">
               <div class="col-lg-8 col-md-7 col-sm-6">
-                <h1>MÓDULO</h1>
-                <p class="lead"><h1>##### ### ### ####</h1></p>
+                <h2>APLICATIVO</h2>
+                <p class="lead"><h2>Registro Información - Supercades</h2></p>
               </div>
               <div class="col-lg-4 col-md-5 col-sm-6">
                  <div align="right"> 
