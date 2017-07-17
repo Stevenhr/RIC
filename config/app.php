@@ -148,6 +148,7 @@ return [
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
 
+
         /*
          * Application Service Providers...
          */
@@ -155,7 +156,8 @@ return [
         App\Providers\AuthServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
-        Idrd\Usuarios\UsuariosServiceProvider::class
+        Idrd\Usuarios\UsuariosServiceProvider::class,
+        Idrd\Parques\ParquesServiceProvider::class
 
     ],
 

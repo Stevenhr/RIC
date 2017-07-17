@@ -2,16 +2,9 @@
 
 namespace App;
 
-use Illuminate\Database\Eloquent\Model;
+use Idrd\Usuarios\Repo\Localidad as MLocalidad;
 
-class Localidad extends Model
+class Localidad extends MLocalidad
 {
-    //
-  protected $table = 'localidad';
-  protected $primaryKey = 'id_localidad';
-  protected $fillable = ['localidad'];
-    
-    public function forms(){
-   		return $this->hasMany('App\Form','localidad');
-   }
+
 }

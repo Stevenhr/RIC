@@ -59,8 +59,8 @@
                 <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="themes">Administración <span class="caret"></span></a>
                 <ul class="dropdown-menu" aria-labelledby="themes">
             
-                  <li class=”{{ Request::is( 'registrarUsuario') ? 'active' : '' }}”>
-                    <a href="{{ URL::to( 'registrarUsuario') }}">Registro de Usuario</a>
+                  <li class=”{{ Request::is( 'personas') ? 'active' : '' }}”>
+                    <a href="{{ URL::to( 'personas') }}">Registro de Usuario</a>
                   </li>
 
                 </ul>
