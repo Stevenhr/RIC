@@ -1,8 +1,14 @@
 @extends('master')
 
+@section('script')
+  @parent
+
+    <script src="{{ asset('public/Js/registrociudadano.js') }}"></script> 
+@stop
+
 @section('content')
 
-<section id="page1">
+<div class="content" id="registroCiudadano" class="row" data-url="registroCiudadano"></div>
 
     <div class="panel panel-default">
 
@@ -11,7 +17,7 @@
                 <div class="freebirdFormviewerViewHeaderHeader">
                     <div class="freebirdFormviewerViewHeaderTitleRow">
 
-                        <form method="POST" action="insertar" id="form_gen" enctype="multipart/form-data">
+                        <form method="POST" id="form_registro_ciudadano">
 
                             <!-- nuevo formulario-->
 
@@ -222,16 +228,7 @@
 <script language="javascript" type="text/javascript">
 
     //*** Este Codigo permite Validar que sea un campo Numerico
-    function Solo_Numerico(variable){
-        Numer=parseInt(variable);
-        if (isNaN(Numer)){
-            return "";
-        }
-        return Numer;
-    }
-    function ValNumero(Control){
-        Control.value=Solo_Numerico(Control.value);
-    }
+    
     //*** Fin del Codigo para Validar que sea un campo Numerico
 </script>
 
