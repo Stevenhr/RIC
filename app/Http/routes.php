@@ -18,6 +18,8 @@ Route::post('/personas/service/procesar/', '\Idrd\Usuarios\Controllers\PersonaCo
 
 //Rutas registrar ciudadano
 Route::get('/registrarciudadano/', 'RegistrarCiudadanoController@index');
+Route::post('/registrarciudadano/registro/', 'RegistrarCiudadanoController@crear');
+
 
 Route::any('/', 'MainController@index');
 Route::any('/logout', 'MainController@logout');
