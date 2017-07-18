@@ -27,8 +27,9 @@ $(function()
 								$('#nombre').html(data.datos.nombres+' '+data.datos.apellidos);
 								$('#myModal_bien').modal('show');
 								 setTimeout(function(){
-				                      location.reload();
-				                  },1000)
+				                      document.getElementById("form_registro_ciudadano").reset();
+				                      $('#myModal_bien').modal('hide');
+				                  },1500)
 								
 							}
 
@@ -36,6 +37,7 @@ $(function()
                 );
         e.preventDefault();
 	});
+	
 
 	var validador = function(data)
 	{

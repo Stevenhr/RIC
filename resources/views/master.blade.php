@@ -80,8 +80,10 @@
               <li class="dropdown">
                 <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="download">Reportes<span class="caret"></span></a>
                 <ul class="dropdown-menu" aria-labelledby="download">
-                  <li><a href="#">Reporte General</a></li>
-                  <li><a href="#">Reportes por Super Cades</a></li>
+                  
+                  <li class=”{{ Request::is( 'reportegeneral') ? 'active' : '' }}”>
+                    <a href="{{ URL::to( 'reportegeneral') }}">Reporte General</a>
+                  </li>
 
                 </ul>
               </li>

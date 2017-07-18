@@ -20,6 +20,9 @@ Route::post('/personas/service/procesar/', '\Idrd\Usuarios\Controllers\PersonaCo
 Route::get('/registrarciudadano/', 'RegistrarCiudadanoController@index');
 Route::post('/registrarciudadano/registro/', 'RegistrarCiudadanoController@crear');
 
+//Reporte general
+Route::get('/reportegeneral/', 'ReporteGeneralController@index');
+Route::post('/reportegeneral/validar_form/', 'ReporteGeneralController@validar_form');
 
 Route::any('/', 'MainController@index');
 Route::any('/logout', 'MainController@logout');
