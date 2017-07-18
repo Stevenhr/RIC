@@ -19,10 +19,12 @@
           <link rel="stylesheet" href="{{ asset('public/components/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.css') }}" media="screen">
           <link rel="stylesheet" href="{{ asset('public/components/datatables.net-bs/css/dataTables.bootstrap.css') }}" media="screen">
           <link rel="stylesheet" href="{{ asset('public/components/datatables.net-responsive-dt/css/responsive.dataTables.min.css') }}" media="screen">
+          <link rel="stylesheet" href="{{ asset('public/components/datatables.net-buttons-dt/css/buttons.dataTables.min.css') }}" media="screen">
           <link rel="stylesheet" href="{{ asset('public/components/highcharts/css/highcharts.css') }}" media="screen">
           <link rel="stylesheet" href="{{ asset('public/components/loaders.css/loaders.min.css') }}" media="screen">
           <link rel="stylesheet" href="{{ asset('public/Css/main.css') }}" media="screen">    
       @show
+
 
       @section('script')
           <script src="{{ asset('public/components/jquery/jquery.js') }}"></script>
@@ -31,12 +33,19 @@
           <script src="{{ asset('public/components/moment/moment.js') }}"></script>
           <script src="{{ asset('public/components/datatables.net/js/jquery.dataTables.js') }}"></script>
           <script src="{{ asset('public/components/datatables.net-bs/js/dataTables.bootstrap.js') }}"></script>
-          <script src="{{ asset('public/components/datatables.net-responsive/js/dataTables.responsive.js') }}"></script>
+          <script src="{{ asset('public/components/datatables.net-responsive/js/dataTables.responsive.min.js') }}"></script>
           <script src="{{ asset('public/components/highcharts/js/highcharts.js') }}"></script>
           <script src="{{ asset('public/components/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js') }}"></script>
+          <script src="{{ asset('public/components/js_datatable/dataTables.buttons.min.js') }}"></script>
           <script src="{{ asset('public/Js/main.js') }}"></script>
-      @show
+          <script type="text/javascript" language="javascript" src="//cdnjs.cloudflare.com/ajax/libs/jszip/2.5.0/jszip.min.js"></script>
+          <script type="text/javascript" language="javascript" src="//cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/pdfmake.min.js"></script>
+          <script type="text/javascript" language="javascript" src="//cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/vfs_fonts.js"></script>
+          <script type="text/javascript" language="javascript" src="//cdn.datatables.net/buttons/1.2.1/js/buttons.html5.min.js"></script>
 
+
+      @show
+          
       <title>Aplicativo Registro Información - Supercades</title>
   </head>
 

@@ -43,15 +43,16 @@ class ReporteGeneralController extends Controller {
             ]
         );
 
-           if ($validator->fails()){
+           if ($validator->fails())
+           {
                 return response()->json(array('status' => 'error', 'errors' => $validator->errors()));
            }
            else
            {
-                $encuesta = Encuesta::all();
+                $encuestas = Encuesta::all();
 
                 $tabla="  <div class='table-responsive'> 
-                <table id='Tabla_Reporte2'>
+                <table class='table' id='Tabla_Reporte2'>
                     <thead>
                         <tr>
                             <th>Id</b></th>
@@ -78,16 +79,17 @@ class ReporteGeneralController extends Controller {
                     </tfoot>
                     <tbody>";
                     
-                        foreach ($componente->actividadMeta->actividades as $key => $atividadmet) {
+                        foreach ($encuestas as $key => $encuesta) 
+                        {
                             $tabla=$tabla."<tr>
-                                <td><h5>".$value['Id']."</h5></td>
-                                <td ><div  class='campoArea'>".$value['ObjetoContractual']."</div></td>
-                                <td> $".number_format ($atividadmet->pivot['valor'])."</td>
-                                <td>".$componente->FuenteProyecto->proyecto['Nombre']."</td>
-                                <td>".$componente->Meta['Nombre']."</td>
-                                <td>".$atividadmet['Nombre']."</td>
-                                <td>".$componente['Nombre']."</td>
-                                <td>".$componente->FuenteProyecto->fuente['nombre']."</td>
+                                <td><h5>".$encuesta['id']."</h5></td>
+                                <td ><div  class='campoArea'>".$encuesta['supercade']."</div></td>
+                                <td> ".$encuesta['nombres']." ".$encuesta['apellidos']."</td>
+                                <td>".$encuesta['tipo_documento']."</td>
+                                <td>".$encuesta['genero']."</td>
+                                <td>".$encuesta['mail']."</td>
+                                <td>".$encuesta['telefono']."</td>
+                                <td>".$encuesta['celular']."</td>
                             </tr>";
                         }
                                                 
