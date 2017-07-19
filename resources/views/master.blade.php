@@ -126,7 +126,7 @@
                   <b>{{$_SESSION['Nombre']}}</b>
                 </div>
                 </div>
-              </div>
+            </div>
           </div>        
       </div>
       <!-- FIN Contenedor información módulo -->
