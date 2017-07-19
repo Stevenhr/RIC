@@ -103,9 +103,9 @@ class MainController extends Controller {
 
 	public function logout()
 	{
+	//dd($_SESSION['Usuario']);
 		$_SESSION['Usuario'] = '';
-		Session::set('Usuario', ''); 
-
+		session_destroy();
 		return redirect()->to('/');
 	}
 }

@@ -30,7 +30,7 @@ Route::any('/logout', 'MainController@logout');
 //rutas con filtro de autenticación
 Route::any('/welcome', 'MainController@welcome');
 Route::any('/', 'MainController@welcome');
-
+Route::any('/logout', 'MainController@logout');
 
 //rutas con filtro de autenticación
 Route::group(['middleware' => ['web']], function () {
