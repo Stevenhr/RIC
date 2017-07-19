@@ -62,7 +62,7 @@ class ReporteGeneralController extends Controller {
                             <th>Tipo documento</th>
                             <th>Genero</th>
                             <th>Correo</th>
-                            <th>Telefono</th>
+                            <th>Teléfono</th>
                             <th>Celular</th>
                             <th>Localidad</th>
                             <th>Estrato</th>
@@ -85,7 +85,7 @@ class ReporteGeneralController extends Controller {
                             <th>Tipo documento</th>
                             <th>Genero</th>
                             <th>Correo</th>
-                            <th>Telefono</th>
+                            <th>Teléfono</th>
                             <th>Celular</th>
                             <th>Localidad</th>
                             <th>Estrato</th>
