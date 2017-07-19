@@ -33,7 +33,7 @@ $(function()
                 {
                   validad_error(data.errors);
                   $("#contenido_reporte2").html("<img src='public/Img/loading.gif'/>");
-                  
+                  console.log(data.tabla);
                   // DataTable
                   $('#contenido_reporte2').html(data.tabla);
                   $('#Tabla_Reporte2 tfoot th').each( function () {

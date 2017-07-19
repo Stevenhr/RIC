@@ -64,36 +64,27 @@
           </div>
           <div class="navbar-collapse collapse" id="navbar-main">
             <ul class="nav navbar-nav">
-              <li class="dropdown">
-                <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="themes">Administración <span class="caret"></span></a>
-                <ul class="dropdown-menu" aria-labelledby="themes">
-            
-                  <li class=”{{ Request::is( 'personas') ? 'active' : '' }}”>
-                    <a href="{{ URL::to( 'personas') }}">Registro de Usuario</a>
-                  </li>
-
-                </ul>
-              </li>
+        
 
               <li class="dropdown">
                 <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="download">Información<span class="caret"></span></a>
                 <ul class="dropdown-menu" aria-labelledby="download">
-                 
+                  @if($_SESSION['Usuario']['Permisos']['Registro_Informacion'])
                   <li class=”{{ Request::is( 'registrarciudadano') ? 'active' : '' }}”>
                     <a href="{{ URL::to( 'registrarciudadano') }}">Registro de Información</a>
                   </li>
-                  
+                  @endif
                 </ul>
               </li>
 
               <li class="dropdown">
                 <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="download">Reportes<span class="caret"></span></a>
                 <ul class="dropdown-menu" aria-labelledby="download">
-                  
+                  @if($_SESSION['Usuario']['Permisos']['Reporte_General'])
                   <li class=”{{ Request::is( 'reportegeneral') ? 'active' : '' }}”>
                     <a href="{{ URL::to( 'reportegeneral') }}">Reporte General</a>
                   </li>
-
+                  @endif
                 </ul>
               </li>
             </ul>
@@ -125,6 +116,16 @@
                  </div>                    
               </div>
             </div>
+            <div class="row">
+                <div class="col-xs-6 col-md-6"></div>
+                <div class="col-xs-6 col-md-6 " align="right">
+                  <div class="alert" role="alert">
+                    <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+                  <span >USUARIO:</span>
+                  <b>{{$_SESSION['Nombre']}}</b>
+                </div>
+                </div>
+              </div>
           </div>        
       </div>
       <!-- FIN Contenedor información módulo -->

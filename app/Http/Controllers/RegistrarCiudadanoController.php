@@ -90,23 +90,24 @@ class RegistrarCiudadanoController extends Controller {
     public function crear_ciudadano($input)
     {
         $encuesta = new Encuesta;
-        $encuesta['supercade']=$input['cades'];
+        $encuesta['id_supercade']=$input['cades'];
 		$encuesta['nombres']=$input['nombres'];
 		$encuesta['apellidos']=$input['apellidos'];
 		$encuesta['cedula']=$input['cedula'];
-		$encuesta['tipo_documento']=$input['tipo_documento'];
+		$encuesta['id_tipo_documento']=$input['tipo_documento'];
 		$encuesta['genero']=$input['genero'];
 		$encuesta['mail']=$input['mail'];
 		$encuesta['telefono']=$input['telefono'];
 		$encuesta['celular']=$input['celular'];
-		$encuesta['localidad']=$input['localidad'];
+		$encuesta['id_localidad']=$input['localidad'];
 		$encuesta['estrato']=$input['estrato'];
-		$encuesta['motivo_consulta']=$input['motivo_consulta'];
+		$encuesta['id_motivo_consulta']=$input['motivo_consulta'];
 		$encuesta['otro']=$input['otro'];
 		$encuesta['pregunta_1']=$input['pregunta_1'];
 		$encuesta['pregunta_2']=$input['pregunta_2'];
 		$encuesta['pregunta_3']=$input['pregunta_3'];
 		$encuesta['observaciones']=$input['observaciones'];
+		$encuesta['id_usuario']=$_SESSION['Id_Usuario'];
 		$encuesta->save();
 
         return response()->json(array('status' => 'creado', 'datos' => $encuesta));
@@ -115,23 +116,24 @@ class RegistrarCiudadanoController extends Controller {
     public function modificar_ciudadano($input)
     {
         $encuesta = Encuesta::find($input["id"]);
-        $encuesta['supercade']=$input['cades'];
+        $encuesta['id_supercade']=$input['cades'];
 		$encuesta['nombres']=$input['nombres'];
 		$encuesta['apellidos']=$input['apellidos'];
 		$encuesta['cedula']=$input['cedula'];
-		$encuesta['tipo_documento']=$input['tipo_documento'];
+		$encuesta['id_tipo_documento']=$input['tipo_documento'];
 		$encuesta['genero']=$input['genero'];
 		$encuesta['mail']=$input['mail'];
 		$encuesta['telefono']=$input['telefono'];
 		$encuesta['celular']=$input['celular'];
-		$encuesta['localidad']=$input['localidad'];
+		$encuesta['id_localidad']=$input['localidad'];
 		$encuesta['estrato']=$input['estrato'];
-		$encuesta['motivo_consulta']=$input['motivo_consulta'];
+		$encuesta['id_motivo_consulta']=$input['motivo_consulta'];
 		$encuesta['otro']=$input['otro'];
 		$encuesta['pregunta_1']=$input['pregunta_1'];
 		$encuesta['pregunta_2']=$input['pregunta_2'];
 		$encuesta['pregunta_3']=$input['pregunta_3'];
 		$encuesta['observaciones']=$input['observaciones'];
+		$encuesta['id_usuario']=$_SESSION['Id_Usuario'];
 		$encuesta->save();
 
         return response()->json(array('status' => 'modificado', 'datos' => $encuesta));

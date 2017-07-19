@@ -6,6 +6,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Idrd\Usuarios\Repo\PersonaInterface;
 use Illuminate\Http\Request;
+use App\Persona;
 
 class MainController extends Controller {
 
@@ -22,8 +23,46 @@ class MainController extends Controller {
 
 	public function welcome()
 	{
-		$data['seccion'] = '';
-		return view('welcome', $data);
+		//$data['seccion'] = '';
+		//return view('welcome', $data);
+
+		 $vectorArreglaso="a%3A14%3A%7Bi%3A0%3Bs%3A4%3A%221046%22%3Bi%3A1%3Bs%3A1%3A%221%22%3Bi%3A2%3Bs%3A1%3A%221%22%3Bi%3A3%3Bs%3A1%3A%221%22%3Bi%3A4%3Bs%3A1%3A%221%22%3Bi%3A5%3Bs%3A1%3A%221%22%3Bi%3A6%3Bs%3A1%3A%221%22%3Bi%3A7%3Bs%3A1%3A%221%22%3Bi%3A8%3Bs%3A1%3A%221%22%3Bi%3A9%3Bs%3A1%3A%221%22%3Bi%3A10%3Bs%3A1%3A%221%22%3Bi%3A11%3Bs%3A1%3A%221%22%3Bi%3A12%3Bs%3A1%3A%221%22%3Bi%3A13%3Bs%3A1%3A%221%22%3B%7D";
+
+
+
+		if ($vectorArreglaso) //$request->has('vector_modulo') ||
+        {   
+
+			$vector = urldecode($vectorArreglaso);
+            $user_array = unserialize($vector);       
+            $_SESSION['Usuario'] = $user_array;
+            $persona = $this->repositorio_personas->obtener($_SESSION['Usuario'][0]);
+            $_SESSION['Usuario']['Persona'] = $persona;
+            $_SESSION['Nombre']=$persona["Primer_Apellido"]." ".$persona["Segundo_Apellido"]." ".$persona["Primer_Nombre"]." ".$persona["Segundo_Nombre"];
+            $_SESSION['Id_Usuario']=$persona["Id_Persona"];
+
+            //dd($_SESSION['Nombre']);
+
+            $permissions_array = $user_array;
+           
+			$permisos = [
+				'Configuracion_usuario' => intval($permissions_array[1]),
+				'Registro_Informacion' => intval($permissions_array[2]),
+				'Reporte_General' => intval($permissions_array[3]),
+			];
+
+			$_SESSION['Usuario']['Permisos'] = $permisos;
+			
+			return view('welcome');	
+
+        } else {
+         //echo"3454";
+            if(!isset($_SESSION['Usuario']))
+                $_SESSION['Usuario'] = '';
+        }
+        
+        if ($_SESSION['Usuario'] == '')
+            return redirect()->away('http://www.idrd.gov.co/SIM/Presentacion/');
 	}
 
     public function index(Request $request)
@@ -49,7 +88,9 @@ class MainController extends Controller {
 			$_SESSION['Usuario']['Persona'] = $persona;
 			$_SESSION['Usuario']['Permisos'] = $permisos;
 			$this->Usuario = $_SESSION['Usuario'];
-		} else {
+		} 
+		else 
+		{
 			if (!isset($_SESSION['Usuario']))
 				$_SESSION['Usuario'] = '';
 		}

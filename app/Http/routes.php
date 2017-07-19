@@ -28,6 +28,11 @@ Route::any('/', 'MainController@index');
 Route::any('/logout', 'MainController@logout');
 
 //rutas con filtro de autenticación
+Route::any('/welcome', 'MainController@welcome');
+Route::any('/', 'MainController@welcome');
+
+
+//rutas con filtro de autenticación
 Route::group(['middleware' => ['web']], function () {
-	Route::get('/welcome', 'MainController@welcome');
+	//Route::get('/welcome', 'MainController@welcome');
 });
